@@ -12,7 +12,6 @@ interface PageProps {
 
 export default async function Page(props: PageProps) {
   const links = await builder.getAll("nav-link", { prerender: false });
-  console.log('links', links);
   const builderModelName = "page";
 
   const content = await builder
@@ -27,7 +26,7 @@ export default async function Page(props: PageProps) {
     .toPromise();
 
   return (
-    <>
+    <div className="px-16">
       <header>
         <nav>
           {links.map((link, index) => (
@@ -39,6 +38,6 @@ export default async function Page(props: PageProps) {
       </header>
       {/* Render the Builder page */}
       <RenderBuilderContent content={content} model={builderModelName} />
-    </>
+    </div>
   );
 }
