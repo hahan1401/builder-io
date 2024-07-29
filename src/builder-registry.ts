@@ -1,7 +1,7 @@
 "use client";
 import { builder, Builder } from "@builder.io/react";
-import Carousel from "./components/ui/Carousel";
 import Counter from "./components/Counter/Counter";
+import HeroSection from "./components/HeroSection/HeroSection";
 import ImageWithText from "./components/ImageWithText/ImageWithText";
 import MyComponent from "./components/MyComponent/MyComponent";
 
@@ -42,29 +42,13 @@ Builder.registerComponent(MyComponent, {
   name: "MyComponent",
 });
 
-Builder.registerComponent(Carousel, {
-  name: "Carousel",
+Builder.registerComponent(HeroSection, {
+  name: "HeroSection",
   inputs: [
-    {
-      name: "autoPlay",
-      type: "boolean",
-    },
-    {
-      name: "centerMode",
-      type: "boolean",
-    },
     {
       name: "data",
       type: "string",
       required: true,
-    },
-    {
-      name: "responsive",
-      type: "boolean",
-    },
-    {
-      name: "slidesToShow",
-      type: "number",
     },
   ],
 });

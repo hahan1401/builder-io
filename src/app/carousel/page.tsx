@@ -1,14 +1,11 @@
-'use client'
-
-import Carousel from '@/components/ui/Carousel'
-import React from 'react'
+"use client";
 
 const page = () => {
   return (
     <div>
-        {/* <Carousel /> */}
+      {/* <HeroSection /> */}
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

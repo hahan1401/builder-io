@@ -26,7 +26,7 @@ export default async function Page(props: PageProps) {
     .toPromise();
 
   return (
-    <div className="px-16">
+    <div className="">
       <header>
         <nav>
           {links.map((link, index) => (
