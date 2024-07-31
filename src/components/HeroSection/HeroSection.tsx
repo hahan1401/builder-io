@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
+import ShoppingButton from "../ui/ShoppingButton";
 
 interface HeroSectionProps {
   data: any[];
@@ -25,9 +26,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data = [] }) => {
     >
       {data.map((item) => (
         <SwiperSlide className="h-full content-center" key={item.id}>
-          {/* <div className="relative pt-[100%]"> */}
           <Image alt="" src={item.image} fill className="object-contain" />
-          {/* </div> */}
+          <div className="absolute bottom-20 md:bottom-auto md:left-32 md:max-w-48">
+            <p className="text-lg mb-4">{item.title}</p>
+            <ShoppingButton title={`$${item.price}`} />
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>
